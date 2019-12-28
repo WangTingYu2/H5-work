@@ -1,0 +1,970 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>please enter your title</title>
+		<meta charset="utf-8">
+		<meta name="Author" content="潭州学院-阿飞老师">
+		<style type='text/css' id='css'>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#wrap1 {
+				width: 970px;
+				height: 300px;
+				margin: 50px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#pic {
+				width: 970px;
+				height: 270px;
+				position: relative;
+			}
+			
+			#pic li {
+				list-style: none;
+				width: 0;
+				height: 0;
+				position: absolute;
+				top: 135px;
+				left: 485px;
+				opacity: 0;
+				filter: alpha(opacity=0);
+			}
+			
+			#pic li span {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				filter: alpha(opacity=50);
+				background: rgba(0, 0, 0, .5);
+				display: block;
+			}
+			
+			#pic li img {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#pic li.l1 {
+				width: 640px;
+				height: 270px;
+				left: 165px;
+				top: 0px;
+				z-index: 10;
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			
+			#pic li.l2 {
+				width: 530px;
+				height: 220px;
+				left: 440px;
+				top: 25px;
+				z-index: 9;
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			
+			#pic li.l0 {
+				width: 530px;
+				height: 220px;
+				left: 0px;
+				top: 25px;
+				z-index: 9;
+				opacity: 1;
+				filter: alpha(opacity=100);
+			}
+			
+			#pic li.l3 {
+				width: 300px;
+				height: 150px;
+				left: 970px;
+				top: 60px;
+				z-index: 8;
+			}
+			
+			#pic li.l9 {
+				width: 300px;
+				height: 150px;
+				left: -300px;
+				top: 60px;
+				z-index: 8;
+			}
+			
+			#btn div {
+				width: 45px;
+				height: 45px;
+				position: absolute;
+				top: 50%;
+				margin-top: -22px;
+				z-index: 999;
+				cursor: pointer;
+			}
+			
+			#left {
+				background: url(img/left.png);
+				left: 0;
+			}
+			
+			#right {
+				background: url(img/right.png);
+				right: 0;
+			}
+			
+			#tab {
+				width: 200px;
+				height: 10px;
+				padding: 10px 0;
+				position: absolute;
+				left: 50%;
+				margin-left: -100px;
+				bottom: 0;
+			}
+			
+			#tab li {
+				list-style: none;
+				float: left;
+				width: 10px;
+				height: 10px;
+				margin: 0 5px;
+				border-radius: 100%;
+				background: #bbb;
+				cursor: pointer;
+			}
+			
+			#tab li.on {
+				background: #0cf;
+			}
+			/*放大镜*/
+			
+			li {
+				list-style: none;
+			}
+			
+			#wrap5 {
+				width: 400px;
+				height: 500px;
+				border: 1px solid #bbb;
+				margin: 100px;
+			}
+			
+			#wrap5 .pic {
+				width: 400px;
+				height: 400px;
+				position: relative;
+			}
+			
+			#wrap5 .pic .pic_cover {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			#wrap5 .pic .pic_cover img {
+				display: block;
+			}
+			
+			#wrap5 .pic .pic_cover .cover {
+				width: 200px;
+				height: 200px;
+				background-image: url(img/cover.png);
+				position: absolute;
+				top: 0;
+				left: 0;
+				cursor: move;
+				display: none;
+			}
+			
+			#wrap5 .tab {
+				width: 400px;
+				height: 54px;
+				margin-top: 20px;
+			}
+			
+			#wrap5 .tab li {
+				width: 50px;
+				height: 50px;
+				float: left;
+				margin: 0 13px;
+				cursor: pointer;
+				border: 2px solid #fff;
+				transition: border .3s;
+				position: relative;
+			}
+			
+			#wrap5 .tab li img {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			#wrap5 .tab li.on {
+				border: 2px solid #f60;
+			}
+			
+			#wrap5 .show {
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				top: 0;
+				right: -410px;
+				background: #ffffcc;
+				display: none;
+				background-image: url(img/1.jpg);
+			}
+			/*滚动图片*/
+			
+			#wrap3 {
+				width: 520px;
+				height: 62px;
+				margin: 100px auto;
+			}
+			
+			#show {
+				width: 462px;
+				height: 62px;
+				overflow: hidden;
+				float: left;
+				margin: 0 8px;
+			}
+			
+			#wrap3 ul {
+				width: 1000%;
+				height: 61px;
+				margin-left: 0;
+			}
+			
+			#wrap3 ul li {
+				list-style: none;
+				float: left;
+				width: 59px;
+				height: 59px;
+				border: 1px solid #ddd;
+				margin: 0 10px;
+			}
+			
+			#prev,
+			#next {
+				width: 20px;
+				height: 59px;
+				float: left;
+				cursor: pointer;
+			}
+			/*3D分块旋转*/
+			
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			#wrap {
+				width: 800px;
+				height: 360px;
+				margin: 450px auto;
+				position: relative;
+			}
+			
+			#pica {
+				width: 800px;
+				height: 360px;
+				perspective: 800px;
+			}
+			
+			#pica ul li {
+				width: 200px;
+				height: 360px;
+				float: left;
+				position: relative;
+				transform-style: preserve-3d;
+				transform: translateZ(-180px);
+			}
+			
+			#pica ul li div {
+				width: 200px;
+				height: 360px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			#pica ul li div:nth-child(1) {
+				top: -360px;
+				transform-origin: bottom;
+				transform: translateZ(180px) rotateX(90deg);
+				background-image: url(img3/1.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#pica ul li div:nth-child(2) {
+				top: 360px;
+				transform-origin: top;
+				transform: translateZ(180px) rotateX(-90deg);
+				background-image: url(img3/2.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#pica ul li div:nth-child(3) {
+				transform: translateZ(180px);
+				background-image: url(img3/3.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#pica ul li div:nth-child(4) {
+				transform: translateZ(-180px) rotateX(180deg);
+				background-image: url(img3/4.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			
+			#pica ul li:nth-child(1) div {
+				background-position: 0 0;
+			}
+			
+			#pica ul li:nth-child(2) div {
+				background-position: -200px 0;
+			}
+			
+			#pica ul li:nth-child(3) div {
+				background-position: -400px 0;
+			}
+			
+			#pica ul li:nth-child(4) div {
+				background-position: -600px 0;
+			}
+			
+			#pica ul li:nth-child(1) {
+				transition: 1s 0s;
+			}
+			
+			#pica ul li:nth-child(2) {
+				transition: 1s .1s;
+			}
+			
+			#pica ul li:nth-child(3) {
+				transition: 1s .2s;
+			}
+			
+			#pica ul li:nth-child(4) {
+				transition: 1s .3s;
+			}
+			
+			#taba {
+				position: absolute;
+				width: 100px;
+				height: 20px;
+				right: 10px;
+				bottom: 10px;
+			}
+			
+			#taba ul li {
+				width: 20px;
+				height: 20px;
+				background: #999;
+				color: #fff;
+				font-size: 12px;
+				text-align: center;
+				line-height: 20px;
+				font-family: 'Microsoft yahei';
+				float: left;
+				cursor: pointer;
+				margin: 0 2px;
+				border-radius: 100%;
+			}
+			
+			#taba ul li.on {
+				background: #f60;
+			}
+			
+			/*瀑布式加载*/
+			#wrape{
+				width:837px;
+				margin:50px auto;
+				box-shadow:0 0 5px #000;
+			}
+			#wrape ul{
+				overflow:hidden;
+			}
+			#wrape ul li{
+				list-style:none;
+				width:265px;
+				float:left;
+			}
+
+			#wrape ul li .detail{
+				font-family:'Microsoft yahei';
+				border:1px solid #ddd;
+				margin-bottom:20px;
+				display:none;
+			}
+			#wrape ul li .detail img{
+				display:block;
+			}
+			#wrape ul li a.dec{
+				line-height:25px;
+				padding:8px 15px;
+				background:#fff;
+				display:block;
+				color:#000;
+				text-decoration:none;
+			}
+			#wrape ul li .time{
+				height:42px;
+				background:#f1f1f1;
+				border-top:1px solid #ddd;
+			}
+			#wrape ul li .time p{
+				float:left;
+				line-height:42px;
+				color:#666;
+				text-indent:10px;
+				font-size:12px;
+			}
+			#wrape ul li .time a{
+				float:right;
+				width:80px;
+				line-height:42px;
+				text-align:center;
+				color:#666;
+				font-size:12px;
+				text-decoration:none;
+				border-left:1px solid #ddd;
+			}
+			#wrape ul li a:hover{
+				color:#b70032;
+			}
+		</style>
+	</head>
+
+	<body style="background: black;">
+		<h1 style="color: white;">船新的帝国时代决定版上市了</h1>
+		<div id="wrap1">
+			<div id='pic'>
+				<li class='l1'><img src="img/3.jpg" alt="" /></li>
+				<li class='l2'><img src="img/1.jpg" alt="" /></li>
+				<li class='l3'><img src="img/2.jpg" alt="" /></li>
+				<li><img src="img/4.jpg" alt="" /></li>
+				<li><img src="img/5.jpg" alt="" /></li>
+				<li class='l9'><img src="img/6.jpg" alt="" /></li>
+				<li class='l0'><img src="img/5.jpg" alt="" /></li>
+			</div>
+			<div id="btn">
+				<div id="left"></div>
+				<div id="right"></div>
+			</div>
+			<div id="tab">
+				<li class='on'></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</div>
+		</div>
+		<h2 style="color: white;">可容纳800人的战场</h2>
+		<div id="wrap5">
+			<div class="pic">
+				<div class="pic_cover">
+					<img src="img/1.jpg" width=400 height=400 />
+					<div class="cover"></div>
+					<div class="show"></div>
+				</div>
+			</div>
+			<div class="tab">
+				<ul>
+					<li class="on"><img src="img/1.jpg" /></li>
+					<li><img src="img/2.jpg" /></li>
+					<li><img src="img/3.jpg" /></li>
+					<li><img src="img/4.jpg" /></li>
+				</ul>
+			</div>
+			<h2 style="color: white;">比HD更高的画质</h2>
+		</div>
+
+		<!--滚动图标-->
+		<div id="wrap3">
+			<div id='prev'><img2 src='img/prev.png' />
+			</div>
+			<div id='show'>
+				<ul>
+					<li><img src='img2/1.png' /></li>
+					<li><img src='img2/2.png' /></li>
+					<li><img src='img2/3.png' /></li>
+					<li><img src='img2/4.png' /></li>
+					<li><img src='img2/5.png' /></li>
+					<li><img src='img2/6.png' /></li>
+					<li><img src='img2/7.png' /></li>
+					<li><img src='img2/8.png' /></li>
+					<li><img src='img2/9.png' /></li>
+					<li><img src='img2/10.png' /></li>
+					<li><img src='img2/11.png' /></li>
+					<li><img src='img2/12.png' /></li>
+					<li><img src='img2/1.png' /></li>
+					<li><img src='img2/2.png' /></li>
+					<li><img src='img2/3.png' /></li>
+				</ul>
+			</div>
+			<div id='next'><img src='img2/next.png' /></div>
+			<h2 style="color: white;">多达35种民族</h2>
+		</div>
+		
+
+		<!--3D分块旋转-->
+		<div id="wrap">
+
+			<div id="pica">
+				<ul>
+					<li>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</li>
+					<li>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</li>
+					<li style='z-index:-1;'>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</li>
+				</ul>
+			</div>
+
+			<div id="taba">
+				<ul>
+					<li class='on'>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ul>
+			</div>
+			<h2 style="color: white;">宏大的战场，考验你的忍耐力</h2>
+		</div>
+		
+		<!--瀑布式加载-->
+		<div id="wrape">
+			<ul>
+				<li></li>
+				<li style="margin-left:20px;"></li>
+				<li style="float:right"></li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/data.js"></script>
+		<script type="text/javascript" src='js/jquery-1.12.1.min4.js'></script>
+		<script type="text/javascript" src='js/jquery-1.12.1.min3.js'></script>
+		<script type="text/javascript" src='js/jquery-1.12.1.min2.js'></script>
+		<script type="text/javascript" src='js/jquery-1.12.1.min.js'></script>
+		<script type="text/javascript">
+			(function() {
+				var $left = $('#left');
+				var $right = $('#right');
+				var $li = $('#pic li');
+				var $tabLi = $('#tab li');
+				var index = 0;
+
+				$li.append('<span></span>');
+				$('#pic li span').eq(0).css('display', 'none');
+
+				var arrW = [],
+					arrH = [],
+					arrL = [],
+					arrT = [],
+					arrZ = [],
+					arrS = [],
+					arrO = [];
+				var nowTime = 0;
+				$right.click(function() {
+					if(new Date() - nowTime > 500) {
+						nowTime = new Date();
+						index++;
+						index %= $li.length;
+						$tabLi.eq(index).addClass('on').siblings().removeClass('on');
+						fn($(this).index());
+					}
+
+				});
+
+				$left.click(function() {
+					if(new Date() - nowTime > 500) {
+						nowTime = new Date();
+						index--;
+						if(index < 0) index = $li.length - 1;
+						$tabLi.eq(index).addClass('on').siblings().removeClass('on');
+						fn($(this).index());
+					}
+				});
+
+				$tabLi.click(function() {
+					$(this).addClass('on').siblings().removeClass('on');
+					var nowIndex = $(this).index();
+					var x = nowIndex - index;
+					if(x == 1 || x == -($li.length - 1)) {
+						fn(true);
+						index = nowIndex;
+					} else if(x == -1 || x == $li.length - 1) {
+						fn(false);
+						index = nowIndex;
+					} else if(nowIndex != index) {
+						$li.each(function(i) {
+							arrW[i] = $(this).css('width');
+							arrH[i] = $(this).css('height');
+							arrL[i] = $(this).css('left');
+							arrT[i] = $(this).css('top');
+							arrZ[i] = $(this).css('zIndex');
+							arrS[i] = $(this).find('span').css('display');
+							arrO[i] = $(this).css('opacity');
+						});
+						$li.each(function(i) {
+							$(this).animate({
+								width: 0,
+								height: 0,
+								opacity: 0,
+								left: '485px',
+								top: '135px'
+							}, 300);
+						});
+						setTimeout(function() {
+							$li.each(function(i) {
+								var a = i - (nowIndex - index);
+								if(a < 0) a += $li.length;
+								if(a >= $li.length) a -= 10;
+								$(this).find('span').css('display', arrS[a]);
+								$(this).css('zIndex', arrZ[a]).animate({
+									width: arrW[a],
+									height: arrH[a],
+									left: arrL[a],
+									top: arrT[a],
+									opacity: arrO[a]
+								}, 500);
+							});
+							index = nowIndex;
+						}, 300);
+					}
+
+				});
+
+				function fn(x) {
+					$li.each(function(i) {
+						arrW[i] = $(this).css('width');
+						arrH[i] = $(this).css('height');
+						arrL[i] = $(this).css('left');
+						arrT[i] = $(this).css('top');
+						arrZ[i] = $(this).css('zIndex');
+						arrS[i] = $(this).find('span').css('display');
+						arrO[i] = $(this).css('opacity');
+					});
+					$li.each(function(i) {
+						if(x) {
+							var a = i - 1;
+							if(a < 0) a = $li.length - 1;
+						} else {
+							var a = i + 1;
+							if(a == $li.length) a = 0;
+						}
+
+						$(this).find('span').css('display', arrS[a]);
+						$(this).css('zIndex', arrZ[a]).animate({
+							width: arrW[a],
+							height: arrH[a],
+							left: arrL[a],
+							top: arrT[a],
+							opacity: arrO[a]
+						}, 500);
+					});
+				}
+
+			})();
+
+			//放大镜
+			var $tabLi = $('.tab ul li');
+			var $picImg = $('.pic img');
+			var $tabLiImg = $('.tab li img');
+			var $picCover = $('.pic_cover');
+			var $cover = $('.cover');
+			var $show = $('.show');
+			var imgArr = [];
+			var index = 0;
+
+			init();
+
+			$tabLi.hover(function() {
+				index = $(this).index();
+				//改变class名以改变边框
+				$(this).addClass('on').siblings().removeClass('on');
+				//获取小图src
+				var src = $(this).find('img').prop('src');
+				//改变大图src
+				$show.css('backgroundImage', 'url(' + src + ')');
+				$picImg.prop({
+					src: src,
+					width: imgArr[index].width * 400,
+					height: imgArr[index].height * 400
+				});
+				$picCover.css({
+					top: (400 - imgArr[index].height * 400) / 2,
+					left: (400 - imgArr[index].width * 400) / 2
+				});
+				var a = 400 * $picCover.width() / imgArr[index].imgW + 'px'
+				$cover.css({
+					width: a,
+					height: a
+				});
+			});
+
+			$picCover.mousemove(function(ev) {
+				$cover.show();
+				$show.show();
+				var pX = ev.pageX,
+					pY = ev.pageY;
+
+				var picCoverX = $picCover.offset().left,
+					picCoverY = $picCover.offset().top;
+				var minusX = pX - picCoverX - $cover.width() / 2,
+					minusY = pY - picCoverY - $cover.height() / 2;
+
+				minusX = Math.max(minusX, 0);
+				minusX = Math.min(minusX, $picCover.width() - $cover.width());
+				minusY = Math.max(minusY, 0);
+				minusY = Math.min(minusY, $picCover.height() - $cover.height());
+				$cover.css({
+					left: minusX + 'px',
+					top: minusY + 'px'
+				});
+				$show.css('backgroundPosition', (-(minusX / $picCover.width()) * imgArr[index].imgW) + 'px ' + (-(minusY / $picCover.height()) * imgArr[index].imgH) + 'px');
+			}).mouseleave(function() {
+				$cover.hide();
+				$show.hide();
+			});
+			$show.mouseover(function() {
+				$cover.hide();
+				$(this).hide();
+			}).mousemove(function() {
+				return false;
+			});
+
+			function init() {
+				$tabLiImg.each(function(i) {
+					var imgWidth = $(this).width();
+					var imgHeight = $(this).height();
+					if(imgWidth >= imgHeight) {
+						$(this).prop({
+							width: 50,
+							height: 50 / imgWidth * imgHeight
+						});
+						$(this).css({
+							top: (50 - 50 / imgWidth * imgHeight) / 2 + 'px'
+						});
+						imgArr[i] = {
+							width: 1,
+							height: imgHeight / imgWidth,
+							imgW: imgWidth,
+							imgH: imgHeight
+						};
+					} else {
+						$(this).prop({
+							width: 50 / imgHeight * imgWidth,
+							height: 50
+						});
+						$(this).css({
+							left: (50 - 50 / imgHeight * imgWidth) / 2 + 'px'
+						});
+						imgArr[i] = {
+							width: imgWidth / imgHeight,
+							height: 1,
+							imgW: imgWidth,
+							imgH: imgHeight
+						};
+					}
+					$(this).show();
+
+				});
+			};
+
+			//滚动图标
+			(function() {
+				var $next = $('#next'),
+					$prev = $('#prev'),
+					$ul = $('#show ul'),
+					$li = $('#show ul li'),
+					$wrap = $('#wrap'),
+					clickTime = 0,
+					timer = null,
+					index = 0;
+
+				$next.click(function() {
+					if(new Date() - clickTime > 500) {
+						clickTime = new Date();
+						index++;
+						$ul.stop().animate({
+							marginLeft: -152 * index + 'px'
+						}, 500, function() {
+							if(index == 4) {
+								$ul.css('marginLeft', 0);
+								index = 0;
+							}
+						});
+					}
+				});
+
+				$prev.click(function() {
+					if(new Date() - clickTime > 500) {
+						clickTime = new Date();
+						if(index == 0) {
+							$ul.css('marginLeft', -152 * 4 + 'px');
+							index = 4;
+						};
+						index--;
+						$ul.stop().animate({
+							marginLeft: index * -152 + 'px'
+						}, 500);
+					}
+				});
+
+				$wrap.hover(function() {
+					clearInterval(timer);
+				}, function() {
+					auto();
+				});
+
+				auto();
+
+				function auto() {
+					timer = setInterval(function() {
+						index++;
+						$ul.stop().animate({
+							marginLeft: -152 * index + 'px'
+						}, 500, function() {
+							if(index == 4) {
+								$ul.css('marginLeft', 0);
+								index = 0;
+							}
+						});
+					}, 2000);
+				}
+			})();
+			//3D分块旋转
+			var tabLi = document.getElementById('taba').getElementsByTagName('li');
+			var oCss = document.getElementById('css');
+
+			for(var i = 0; i < tabLi.length; i++) {
+				tabLi[i].i = i;
+				tabLi[i].onclick = function() {
+					for(var j = 0; j < tabLi.length; j++) {
+						tabLi[j].className = '';
+					}
+					this.className = 'on';
+					oCss.innerHTML += '#pica ul li{transform:translateZ(-180px) rotateX(' + -90 * this.i + 'deg);}';
+				};
+			}
+			
+			//瀑布式加载
+			$(function(){
+				
+				var $li = $('#wrape ul li');
+				var liLength = $li.length;
+				var $wrap = $('#wrape');
+
+				var index = -1;
+				show( 10 );
+
+
+				$(window).scroll(function(){
+					var bW = $wrap.offset().top + $wrap.height() - $(document).scrollTop();
+					if ( bW < $(window).height() )
+					{
+						num = index + 5;
+						show( num );
+					}
+				});
+				
+				
+				function show( num ){
+					index ++;
+					var oDiv = createDiv(index);
+					var i = getShort();
+					$li.eq(i).append( $(oDiv) );
+					$(oDiv).fadeIn( 1000 );
+					var oImg = oDiv.getElementsByTagName('img')[0];
+					oImg.onload = function(){
+						if ( index < num )
+						{
+							show( num );
+						}
+					}
+				};
+
+				//得到三个li最短的那个的序列号
+				function getShort(){
+					//假设最短的是第一个；a -> 序列号 ; fH -> 第一个的高度
+					var a = 0;
+					var fH = $li.eq(0).height();
+
+					//循环所有的li
+					for ( var i=1;i<liLength;i++ )
+					{
+						//得到对应的li的高度
+						var nH = $li.eq(i).height();
+						//如果说该li的高度小于fH;
+						if ( nH < fH  )
+						{
+							a = i; // 更新最短的序列号
+							fH = nH; // 更新最短的高度
+						}
+					}
+					return a;
+				}
+
+				function createDiv(i){
+					var oDiv = document.createElement('div');
+						oDiv.className = 'detail';
+					var oImg = new Image();
+						oImg.src = imgData[i].src;
+						oImg.width = '263';
+					var oA = document.createElement('a');
+						oA.href = '';
+						oA.className = 'dec';
+						oA.innerHTML = imgData[i].dec;
+					var oDiv1 = document.createElement('div');
+						oDiv1.className = 'time';
+					var oP = document.createElement('p');
+						oP.innerHTML = imgData[i].time;
+					var oA1 = document.createElement('a');
+						oA1.href = '';
+						oA1.innerHTML = '阅读全文';
+					oDiv1.appendChild(oP);
+					oDiv1.appendChild(oA1);
+					oDiv.appendChild( oImg );
+					oDiv.appendChild( oA );
+					oDiv.appendChild( oDiv1 );
+					return oDiv;
+				}
+
+			});
+			
+		</script>
+	</body>
+
+</html>
